@@ -1,25 +1,17 @@
-# 📘 Scheme Research Tool – PM SVANidhi Example
+# PDF Scheme Document Semantic Search & Question Answering
 
-A government scheme research assistant built with **Streamlit**, **LangChain**, **FAISS**, and **OpenAI**. Upload a scheme PDF and ask questions to extract relevant info like eligibility, benefits, documents, and application process.
+A Retrieval-Augmented Generation (RAG) assistant for complex regulatory and government scheme documents. Extracts, indexes, and queries unstructured PDF publications using Streamlit, LangChain, FAISS, and OpenAI embeddings.
 
----
+## Pipeline Architecture
 
-## ✅ Features
+1. Ingestion: Loads PDF publications using PyPDFLoader.
+2. Chunking & Indexing: Splits text into overlapping semantic passages using RecursiveCharacterTextSplitter and indexes vector embeddings into a local FAISS database.
+3. Query Execution: Retrieves top-k matching document passages and constructs prompt contexts for conversational LLM response generation.
+4. User Interface: Streamlit web client supporting real-time document upload, processing status, and interactive query evaluation.
 
-- 🗂 Upload and process government scheme PDFs
-- 📄 Extract summarized scheme details:
-  - Eligibility
-  - Benefits
-  - Required Documents
-  - Application Process
-- 🤖 Ask natural language questions about the scheme
-- 📍 Answers sourced directly from uploaded PDFs
-
----
-
-## 🚀 Getting Started
-
-### 1. Install Dependencies
+## Installation and Setup
 
 ```bash
 pip install -r requirements.txt
+streamlit run main.py
+```
